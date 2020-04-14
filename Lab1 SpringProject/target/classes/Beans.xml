@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context=" http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <bean id = "helloWorld" class = "com.cg.hello.hello" init-method="getMessage" destroy-method ="getCollection">
+      <property name = "message" value = "Hello World!" ></property>
+      <constructor-arg >
+      <set>
+      <value>INDIA</value>
+      <value>USA</value>
+      <value>BRAZIL</value>
+      <value>NEPAL</value>
+      <value>CHINA</value>
+      </set>
+      </constructor-arg>
+      <constructor-arg>
+      <list>
+      <value>Satyam</value>
+      <value>Pranav</value>
+      <value>Amardeep</value>
+      </list>
+      </constructor-arg>
+      <constructor-arg >
+      <map>
+      <entry key="1" value="Satyam"></entry>
+      <entry key="2" value="pranav"></entry>
+      <entry key="3" value="Amardeep"></entry>
+      
+      </map>
+      </constructor-arg>
+   </bean>
+   
+   
+   <!--  <bean id="car" class ="com.cg.carfunction.FordCar">-->
+   
+    <bean id="car" class ="com.cg.carfunction.MarutiCar">
+    <property name = "carName" value = "Maruti 800"/>
+    <property name = "price"   value = "250000.00"/>
+    <property name = "modelNumber" value = "800"/>
+    <constructor-arg value="10" type="int"></constructor-arg> 
+    <constructor-arg ref="helloWorld"/>
+   </bean>
+   
+  
+</beans>
